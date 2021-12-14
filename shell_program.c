@@ -349,12 +349,12 @@ int getargs(char *cmd, char ** argv) {
 
 void handler_SIGINT(int signo, pid_t pid) {
 	if (kill(pid, SIGTERM) != 0) {
-        	printf("\n");
+        	printf("\nCtrl+C(SIGINT)\n");
     	}
 }
 
 void handler_SIGQUIT(int signo) {
-	printf("\nCtrl+Z(SIGTSTP)\n");
+	printf("\nCtrl+Z(SIGQUIT)\n");
 	printf("Quit (core dumped)\n");
 	
 	exit(1);
